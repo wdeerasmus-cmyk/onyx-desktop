@@ -18,20 +18,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 10
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
+          cache: npm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm install
 
       - name: Build Vite + Electron
-        run: pnpm run electron:build:mac
+        run: npm run electron:build:mac
         env:
           PORT: "3000"
           BASE_PATH: "/onyx-desktop/"
@@ -65,20 +61,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 10
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
+          cache: npm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm install
 
       - name: Build Vite + Electron
-        run: pnpm run electron:build:win
+        run: npm run electron:build:win
         env:
           PORT: "3000"
           BASE_PATH: "/onyx-desktop/"

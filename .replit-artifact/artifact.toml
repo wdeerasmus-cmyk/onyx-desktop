@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/onyx-desktop/"
+title = "Onyx Desktop"
+version = "1.0.0"
+id = "artifacts/onyx-desktop"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/onyx-desktop/" ]
+localPort = 25632
+
+[services.development]
+run = "pnpm --filter @workspace/onyx-desktop run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/onyx-desktop", "run", "build" ]
+publicDir = "artifacts/onyx-desktop/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25632"
+BASE_PATH = "/onyx-desktop/"

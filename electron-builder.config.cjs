@@ -12,6 +12,7 @@ module.exports = {
     "electron/**/*",
     "node_modules/**/*",
     "!node_modules/.bin",
+    "package.json",
   ],
 
   extraMetadata: {
@@ -24,10 +25,8 @@ module.exports = {
     target: [
       { target: "dmg", arch: ["universal"] },
     ],
-    hardenedRuntime: true,
+    hardenedRuntime: false,
     gatekeeperAssess: false,
-    entitlements: "electron/entitlements.mac.plist",
-    entitlementsInherit: "electron/entitlements.mac.plist",
   },
 
   dmg: {
@@ -55,11 +54,7 @@ module.exports = {
     shortcutName: "Onyx Security",
   },
 
-  publish: {
-    provider: "github",
-    owner: "onyxaegis",
-    repo: "onyx-desktop",
-  },
+  publish: null,
 
   linux: false,
 };

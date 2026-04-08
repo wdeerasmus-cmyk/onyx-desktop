@@ -20,6 +20,7 @@ module.exports = {
   },
 
   mac: {
+    identity: null,
     category: "public.app-category.utilities",
     icon: "public/icon.icns",
     target: [

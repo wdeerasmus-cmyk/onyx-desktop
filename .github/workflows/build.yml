@@ -31,6 +31,7 @@ jobs:
           CI: true
           PORT: "3000"
           BASE_PATH: "/onyx-desktop/"
+          CSC_IDENTITY_AUTO_DISCOVERY: false
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

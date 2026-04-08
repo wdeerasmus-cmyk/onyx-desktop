@@ -28,6 +28,7 @@ jobs:
       - name: Build Vite + Electron
         run: npm run electron:build:mac
         env:
+          CI: true
           PORT: "3000"
           BASE_PATH: "/onyx-desktop/"
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -70,6 +71,7 @@ jobs:
       - name: Build Vite + Electron
         run: npm run electron:build:win
         env:
+          CI: true
           PORT: "3000"
           BASE_PATH: "/onyx-desktop/"
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
